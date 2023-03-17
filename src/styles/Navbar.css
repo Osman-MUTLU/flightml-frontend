@@ -1,0 +1,29 @@
+.navbar{
+    background-color: #43293d;
+    opacity: 0.9;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar__logo{
+    margin: 20px 0 0 20px;
+
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+}
+.navbar__logo__icon{
+    margin-right: 10px;
+    float: left;
+}
+    
+.navbar__logo__text{
+    margin-top: 5px;
+    float: left;
+}
+
