@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import RadioButton from '../components/RadioButton'
 import SelectBox from '../components/SelectBox'
 import '../styles/Home.css'
+import DatePicker from '../components/DatePicker'
 
 
 function Home() {
@@ -61,7 +62,9 @@ function Home() {
                 value={destination}
               />
             </Grid>
-            <Grid item xs={1}/>
+            <Grid item xs={1}>
+              <DatePicker />
+            </Grid>
             <Grid item xs={2}>
               <Button
                 id='btn1'
