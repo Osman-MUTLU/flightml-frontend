@@ -8,14 +8,16 @@
     cursor: pointer;
 }
 
+
 .select-box__selected-value{
     position: relative;
     background: white;
-
-    
     color: #000;
 }
 
+.select-box__selected-value:hover{
+    border: 1px solid #000 ;
+}
 .select-box__options{
     position: relative;
     padding: 0 0.5em;
@@ -71,4 +73,8 @@
     appearance: none;
     outline: none;
     z-index: 1;
+}
+.select-box__option:hover{
+    background: #0000001a;
+    
 }

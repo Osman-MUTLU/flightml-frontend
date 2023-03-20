@@ -2,31 +2,34 @@ import React from 'react'
 import "../styles/SelectBox.css"
 
 function SelectBox(props) {
-  const { options, onChange, value, placeholder} = props
+  const { options, onChange, selectedOption, placeholder} = props
   const [isOpen, setIsOpen] = React.useState(false)
-  const [selectedOption, setSelectedOption] = React.useState(options[0])
-  const [search, setSearch] = React.useState('')
-  const onChangeHandler = (e) => {
-    setSearch(e.target.value)
-    if(e.target.value !== '') {
+
+  const onChangeHandler = (option) => {
+    if(option.label !== '') {
       setIsOpen(true)
     }
     else{
       setIsOpen(false)
     }
-    onChange(e)
+    onChange(option)
   }
+  
+  const findOptionWithLabel = (label) => {
+    return options.find(option => option.label === label) || {value: '', label: label}
+  }
+
+
   return (
     <>
       <div className='select-box'>
-
         <div className='select-box__selected-value' onClick={() => setIsOpen(!isOpen)}>
             <input
                 type='text'
                 className='select-box__search'
                 placeholder={placeholder}
-                value={search}
-                onChange={onChangeHandler}
+                value={selectedOption.label? selectedOption.label : ''}
+                onChange={(e) => onChangeHandler(findOptionWithLabel(e.target.value))}
               />
           
         </div>
@@ -34,7 +37,7 @@ function SelectBox(props) {
         <div className='select-box__options'>
           
           {options
-            .filter((option) => option.label.toLowerCase().includes(search.toLowerCase()))
+            .filter((option) => option.label.toLowerCase().includes(selectedOption.label?.toLowerCase() || ''))
             .map((option) => (
               <div
                 key={option.value}
@@ -42,8 +45,7 @@ function SelectBox(props) {
                   selectedOption.value === option.value ? 'select-box__option--selected' : ''
                 }`}
                 onClick={() => {
-                  setSelectedOption(option)
-                  setSearch(option.label)
+                  onChange(option)
                   setIsOpen(false)
                 }}
               >

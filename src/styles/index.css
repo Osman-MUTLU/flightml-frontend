@@ -3,32 +3,6 @@ body {
   padding: 0;
 }
 
-.button {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.button-primary {
-  background-color: #43293d;
-  color: white;
-}
-.button-primary:hover {
-  background-color: #43293dd8;
-}
-
-.button-secondary {
-  background-color: white;
-  border: #43293d 2px solid;
-  color: #43293d;
-}
 
 .button-secondary:hover {
   background-color:  rgba(255, 255, 255, 0.823);
